@@ -11,16 +11,15 @@ function Hero() {
     let tl = gsap.timeline();
 
     tl.from("#hero", {
-      top: -500,
+      x: 600,
       opacity: 0,
-      ease: "bounce",
-      duration: 1,
+      duration: 1.5,
     });
     tl.from(".icon", {
       opacity: 0,
       duration: 1,
       stagger: {
-        amount: 2,
+        amount: 0.5,
       },
       top: 250,
       left: 250,
@@ -28,28 +27,29 @@ function Hero() {
   });
   return (
     <>
-      <div id='hero' className='mt-16 w-full relative mr-8 p-20'>
-        <div>
+      <div id='hero' className='px-15 w-full h-full pt-10 mr-8 mt-10'>
+        <div className='w-[90%]'>
           <img
-            className='z-20'
+            className='z-20  mx-20'
             src='../../public/Images/my-3D-model-img.png'
             alt='img-hero'
           />
         </div>
+
         <div className='-z-10'>
-          <div className='icon w-20 h-20 absolute top-50 left-0 '>
+          <div className='icon w-20 h-20 absolute top-55 left-10 '>
             <FaReact className='text-cyan-300 drop-shadow-cyan-300 drop-shadow-2xl w-full h-full' />
           </div>
-          <div className='icon w-20 h-20 absolute top-10 left-25'>
+          <div className='icon w-20 h-20 absolute top-10 left-30'>
             <FaNodeJs className='text-yellow-300 drop-shadow-yellow-300 drop-shadow-2xl  w-full h-full' />
           </div>
-          <div className='icon w-20 h-20 absolute -top-10 left-70'>
+          <div className='icon w-20 h-20 absolute -top-10 left-75'>
             <SiMongodb className='text-green-800 drop-shadow-green-200 drop-shadow-2xl w-full h-full' />
           </div>
-          <div className='icon w-20 h-20 absolute top-0 right-20'>
+          <div className='icon w-20 h-20 absolute top-13 right-5'>
             <SiExpress className='text-gray drop-shadow-gray-300 drop-shadow-2xl w-full h-full' />
           </div>
-          <div className='icon w-20 h-20 absolute top-50 right-14'>
+          <div className='icon w-20 h-20 absolute top-60 right-5'>
             <TbBrandNextjs className='text-gray-800 drop-shadow-white drop-shadow-2xl w-full h-full' />
           </div>
         </div>
