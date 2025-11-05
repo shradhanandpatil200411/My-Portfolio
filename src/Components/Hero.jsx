@@ -15,6 +15,7 @@ function Hero() {
       opacity: 0,
       duration: 1.5,
     });
+
     tl.from(".icon", {
       opacity: 0,
       duration: 1,
@@ -24,10 +25,26 @@ function Hero() {
       top: 250,
       left: 250,
     });
+
+    tl.to(".icon", {
+      scrollTrigger: {
+        trigger: "#hero",
+        markers: true,
+        start: "top 20%",
+        end: "80% center ",
+        scrub: 1,
+      },
+      top: 300,
+      left: 300,
+      opacity: 0,
+      stagger: {
+        amount: 0.5,
+      },
+    });
   });
   return (
     <>
-      <div id='hero' className='px-15 w-full h-full pt-10 mr-8 mt-10'>
+      <div id='hero' className='px-15 w-full h-full pt-10 mr-8 mt-10 '>
         <div className='w-[90%]'>
           <img
             className='z-20  mx-20'
@@ -36,8 +53,8 @@ function Hero() {
           />
         </div>
 
-        <div className='-z-10'>
-          <div className='icon w-20 h-20 absolute top-55 left-10 '>
+        <div className=''>
+          <div className='icon w-20 h-20 absolute  top-55 left-10 '>
             <FaReact className='text-cyan-300 drop-shadow-cyan-300 drop-shadow-2xl w-full h-full' />
           </div>
           <div className='icon w-20 h-20 absolute top-10 left-30'>

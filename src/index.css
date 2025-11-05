@@ -5,6 +5,7 @@
 @theme{
     --color-dark-green:#125b50;
     --color-light-green: #45ad82;
+    --color-dark:#18222b;
     --color-green: #0e7f6c;
     --color-black:#19171b;
     --color-gold:#dea314;
@@ -23,5 +24,11 @@
     --font-para-Lato:"Lato",
         sans-serif;
     --font-para-Roboto:"Roboto",
+        sans-serif;
+}
+
+
+body{
+    font-family: "Roboto",
         sans-serif;
 }

@@ -8,7 +8,7 @@ function App() {
   gsap.registerPlugin(ScrollTrigger);
 
   return (
-    <div className=' overflow-x-hidden'>
+    <div className=' overflow-x-hidden font-heading-Poppins  bg-linear-to-b overflow-hidden  from-black via-cyan-950 to-cyan-700   text-white'>
       <Navbar />
       <MainRoutes />
     </div>
