@@ -29,7 +29,7 @@ function Hero() {
     tl.to(".icon", {
       scrollTrigger: {
         trigger: "#hero",
-        markers: true,
+        markers: false,
         start: "top 20%",
         end: "80% center ",
         scrub: 1,

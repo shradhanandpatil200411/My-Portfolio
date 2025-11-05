@@ -3,22 +3,29 @@ import Hero from "../Components/Hero";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import About from "./About";
+import { useRef } from "react";
 
 function Home() {
-  useGSAP(() => {
-    let split = SplitText.create("#name-heading", { type: "chars" });
-    gsap.from(split.chars, {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-      stagger: {
-        amount: 1,
-      },
-    });
-  });
+  const container = useRef();
+  useGSAP(
+    () => {
+      let split = SplitText.create("#name-heading", { type: "chars" });
+      gsap.from(split.chars, {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        stagger: {
+          amount: 1,
+        },
+      });
+    },
+    { scope: container.current, dependencies: container.current }
+  );
   return (
     <>
-      <div className='flex justify-between relative w-screen  h-fit pt-20 '>
+      <div
+        ref={container}
+        className='flex justify-between relative w-screen  h-fit pt-20 '>
         <div className='w-1/2 z-20'>
           <div className=' flex flex-col justify-center pl-10 w-10/12  h-full gap-3'>
             <h2 className='text-3xl '>
