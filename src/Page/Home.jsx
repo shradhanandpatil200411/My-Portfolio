@@ -10,13 +10,25 @@ function Home() {
   useGSAP(
     () => {
       let split = SplitText.create("#name-heading", { type: "chars" });
-      gsap.from(split.chars, {
+      let tl = gsap.timeline();
+      tl.from(split.chars, {
         x: -100,
         opacity: 0,
         duration: 1,
         stagger: {
           amount: 1,
         },
+      });
+      tl.from("#home-contain", {
+        scrollTrigger: {
+          trigger: "#home-contain",
+          markers: false,
+          start: "50 center",
+          end: "bottom bottom",
+          scrub: 1,
+        },
+        y: 100,
+        stagger: 5,
       });
     },
     { scope: container.current, dependencies: container.current }
@@ -26,7 +38,7 @@ function Home() {
       <div
         ref={container}
         className='flex justify-between relative w-screen  h-fit pt-20 '>
-        <div className='w-1/2 z-20'>
+        <div id='home-contain' className='w-1/2 z-20'>
           <div className=' flex flex-col justify-center pl-10 w-10/12  h-full gap-3'>
             <h2 className='text-3xl '>
               <span className='text-main font-heading-Space-Grotesk'>

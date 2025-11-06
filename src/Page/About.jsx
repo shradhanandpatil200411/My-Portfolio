@@ -6,13 +6,14 @@ import { CiLinkedin } from "react-icons/ci";
 function About() {
   useGSAP(() => {
     // Image animation
+
     gsap.from("#about-img", {
       scrollTrigger: {
         trigger: "#about-img",
         start: "40% 80%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
-        markers: true,
+        markers: false,
       },
       x: -400,
       opacity: 0,
@@ -65,9 +66,9 @@ function About() {
 
             <div>
               <h1 className='text-4xl font-heading-Poppins font-bold'>
-                Fined Me On
+                Find Me On
               </h1>
-              <div className='flex gap-5'>
+              <div id='social-icons' className='flex gap-5'>
                 <div className=' text-white hover:text-gold hover:drop-shadow-xl hover:drop-shadow-gold transition-all  cursor-pointer p-5 w-fit mt-2'>
                   <FaGithub className='w-20 h-20 ' />
                 </div>
