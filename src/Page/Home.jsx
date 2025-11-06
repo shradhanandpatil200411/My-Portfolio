@@ -28,7 +28,6 @@ function Home() {
           scrub: 1,
         },
         y: 100,
-        stagger: 5,
       });
     },
     { scope: container.current, dependencies: container.current }

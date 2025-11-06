@@ -5,8 +5,6 @@ import { CiLinkedin } from "react-icons/ci";
 
 function About() {
   useGSAP(() => {
-    // Image animation
-
     gsap.from("#about-img", {
       scrollTrigger: {
         trigger: "#about-img",
@@ -21,24 +19,20 @@ function About() {
       ease: "elastic.out",
     });
 
-    // Content animation
     gsap.from("#about-contain", {
       scrollTrigger: {
         trigger: "#about-contain",
-        start: "top 80%",
-        end: "top 20%",
-        toggleActions: "play none none reverse",
-        markers: false,
+        start: "top center",
+        end: "bottom center",
+        scrub: 1,
+        markers: true,
       },
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
+      y: 50,
     });
   });
   return (
     <>
-      <div id='about' className=' flex  gap-20 p-10'>
+      <div id='about' className=' flex gap-20 p-10'>
         <div id='about-img' className='h-1/2 mt-10'>
           <img
             className='h-full w-full drop-shadow-xl drop-shadow-main'

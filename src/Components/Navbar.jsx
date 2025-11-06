@@ -81,6 +81,7 @@ function Navbar() {
             />
           </NavLink>
         </div>
+
         <div className='flex justify-around gap-10 w-1/2 h-full items-center'>
           <div className='cursor-pointer nav  '>
             <NavLink
