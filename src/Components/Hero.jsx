@@ -47,7 +47,7 @@ function Hero() {
       <div id='hero' className='px-15 w-full h-full pt-10 mr-8 mt-10 '>
         <div className='w-[90%]'>
           <img
-            className='z-20  mx-20'
+            className='z-20  mx-20 '
             src='../../public/Images/my-3D-model-img.png'
             alt='img-hero'
           />

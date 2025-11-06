@@ -37,8 +37,8 @@ function Home() {
       <div
         ref={container}
         className='flex justify-between relative w-screen  h-fit pt-20 '>
-        <div id='home-contain' className='w-1/2 z-20'>
-          <div className=' flex flex-col justify-center pl-10 w-10/12  h-full gap-3'>
+        <div id='home-contain' className='w-1/2 z-20 '>
+          <div className=' flex flex-col pl-10 pt-24 w-full  h-full gap-3'>
             <h2 className='text-3xl '>
               <span className='text-main font-heading-Space-Grotesk'>
                 Hello
@@ -57,6 +57,11 @@ function Home() {
               Building modern web experiences with MongoDB, React, Node.js,
               Express, and stunning GSAP-powered animations
             </p>
+            <div>
+              <button className='border border-gold tracking-wider px-8 hover:bg-gold transition-all duration-500 cursor-pointer py-2 rounded-xl font-heading-Montserrat font-semibold'>
+                Contact
+              </button>
+            </div>
           </div>
         </div>
 

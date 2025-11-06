@@ -124,12 +124,12 @@ function Navbar() {
                   : "text-white"
               }
               to='/contact-us'>
-              Contact Us
+              Contact
             </NavLink>
           </div>
-          <div className='cursor-pointer  nav ' onClick={onMenuClose}>
+          <div className='cursor-pointer  nav' onClick={onMenuClose}>
             {cross ? (
-              <RxCross1 className='bg-main text-4xl font-bold  rounded-full' />
+              <RxCross1 className='border text-main border-main text-4xl font-bold p-1 rounded-full' />
             ) : (
               ""
             )}

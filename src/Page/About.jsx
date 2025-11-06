@@ -2,40 +2,60 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
+import MySkill from "./MySkill";
 
 function About() {
-  useGSAP(() => {
-    gsap.from("#about-img", {
-      scrollTrigger: {
-        trigger: "#about-img",
-        start: "40% 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
-        markers: false,
-      },
-      x: -400,
-      opacity: 0,
-      duration: 1,
-      ease: "elastic.out",
-    });
+  useGSAP(
+    () => {
+      gsap.from("#about-img", {
+        scrollTrigger: {
+          trigger: "#about-img",
+          start: "40% 80%",
+          end: "center 20%",
+          scrub: 1,
+          markers: false,
+        },
+        y: 100,
+      });
 
-    gsap.from("#about-contain", {
-      scrollTrigger: {
-        trigger: "#about-contain",
-        start: "top center",
-        end: "bottom center",
-        scrub: 1,
-        markers: true,
-      },
-      y: 50,
-    });
-  });
+      gsap.from("#my-img", {
+        scrollTrigger: {
+          trigger: "#about-img",
+          start: "40% 80%",
+          end: "center 20%",
+          toggleActions: "play none none restart",
+          markers: false,
+        },
+        scale: 1,
+        y: 10,
+        yoyo: true,
+        repeat: Infinity,
+        duration: 1.5,
+        ease: "power1.out",
+      });
+
+      gsap.from("#about-contain", {
+        scrollTrigger: {
+          trigger: "#about-contain",
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+          markers: false,
+        },
+        y: 50,
+      });
+    },
+    { scope: "#about" }
+  );
   return (
     <>
       <div id='about' className=' flex gap-20 p-10'>
-        <div id='about-img' className='h-1/2 mt-10'>
+        <div
+          id='about-img'
+          className='h-1/2 mt-10  px-10 pt-10 rounded-t-full bg-linear-to-b from-amber-200 to-amber-600 w-5/12 overflow-hidden'>
           <img
-            className='h-full w-full drop-shadow-xl drop-shadow-main'
+            id='my-img'
+            className='h-full w-full drop-shadow-xl drop-shadow-black'
             src='../../public/Images/my-3D-model-2.png'
             alt='3D-Model'
           />
@@ -73,6 +93,9 @@ function About() {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <MySkill />
       </div>
     </>
   );
