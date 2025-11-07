@@ -39,6 +39,18 @@ function Hero() {
       opacity: 0,
       stagger: {
         amount: 0.5,
+        from: "end",
+      },
+    });
+
+    tl.to(".icon", {
+      duration: 1,
+      stagger: {
+        amount: 1,
+        from: "random",
+        y: 10,
+        yoyo: true,
+        repeat: -1,
       },
     });
   });

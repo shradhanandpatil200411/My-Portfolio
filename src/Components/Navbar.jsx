@@ -2,12 +2,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import { NavLink } from "react-router";
+import { IoIosMenu } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 
 function Navbar() {
   const navContainer = useRef();
   const [nav, setNav] = useState(1);
   const [cross, setCross] = useState(false);
+  const [menu, setMenu] = useState(false);
 
   const { contextSafe } = useGSAP({
     scope: navContainer,
@@ -34,7 +36,7 @@ function Navbar() {
     gsap.to(".nav", {
       scrollTrigger: {
         trigger: "#home-contain",
-        markers: false,
+        markers: true,
         start: "center center",
         end: "center center",
         toggleActions: "restart none none play",
@@ -73,13 +75,17 @@ function Navbar() {
           nav ? "" : "backdrop-blur-2xl rounded-full mt-5 "
         }`}>
         <div className='cursor-pointer nav w-1/2 '>
-          <NavLink to='/' onClick={onMenuOpen}>
-            <img
-              className='w-36 cursor-pointer'
-              src='../../public/Images/logo.png'
-              alt='logo'
-            />
-          </NavLink>
+          {menu ? (
+            <IoIosMenu />
+          ) : (
+            <NavLink to='/' onClick={onMenuOpen}>
+              <img
+                className='w-36 cursor-pointer'
+                src='../../public/Images/logo.png'
+                alt='logo'
+              />
+            </NavLink>
+          )}
         </div>
 
         <div className='flex justify-around gap-10 w-1/2 h-full items-center'>

@@ -37,10 +37,10 @@ function About() {
       gsap.from("#about-contain", {
         scrollTrigger: {
           trigger: "#about-contain",
-          start: "top center",
-          end: "bottom center",
+          start: "-200 center",
+          end: "top center",
           scrub: 1,
-          markers: false,
+          markers: true,
         },
         y: 50,
       });
@@ -49,32 +49,35 @@ function About() {
   );
   return (
     <>
-      <div id='about' className=' flex gap-20 p-10'>
+      <div id='about' className=' flex  gap-20 p-10'>
         <div
           id='about-img'
-          className='h-1/2 mt-10  px-10 pt-10 rounded-t-full bg-linear-to-b from-amber-200 to-amber-600 w-5/12 overflow-hidden'>
+          className='h-[80vh] mt-10  px-10 pt-10 rounded-t-full bg-linear-to-b from-amber-200 to-amber-600 w-[35vw] overflow-hidden'>
           <img
             id='my-img'
-            className='h-full w-full drop-shadow-xl drop-shadow-black'
+            className='h-[90%] w-full drop-shadow-xl drop-shadow-black'
             src='../../public/Images/my-3D-model-2.png'
             alt='3D-Model'
           />
         </div>
-        <div className='w-1/2'>
-          <div className='w-fit mx-auto mt-10 flex flex-col gap-10'>
+        <div className='w-1/2 '>
+          <div className=' mx-auto mt-20 flex flex-col gap-10'>
             <h1 className='text-6xl font-heading-Space-Grotesk font-bold '>
               About Me
             </h1>
             <div id='about-contain'>
               <p className='tracking-widest'>
-                Hello! I’m Shradhanand Patil, a passionate MERN stack developer
-                with 3 years of hands-on experience in building scalable and
-                dynamic web applications. My expertise lies in React.js,
-                Node.js, Next.js, Express, and MongoDB, and I also have a strong
-                foundation in GSAP for creating engaging animations and
-                interactive user experiences. I am committed to writing clean,
-                efficient code and delivering robust solutions that meet
-                real-world challenges.
+                Hello! I’m{" "}
+                <span className='text-gold font-bold font-heading-Space-Grotesk'>
+                  Shradhanand Patil
+                </span>
+                , a passionate MERN stack developer with 3 years of hands-on
+                experience in building scalable and dynamic web applications. My
+                expertise lies in React.js, Node.js, Next.js, Express, and
+                MongoDB, and I also have a strong foundation in GSAP for
+                creating engaging animations and interactive user experiences. I
+                am committed to writing clean, efficient code and delivering
+                robust solutions that meet real-world challenges.
               </p>
             </div>
 
