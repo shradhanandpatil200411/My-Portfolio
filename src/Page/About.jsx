@@ -40,7 +40,7 @@ function About() {
           start: "-200 center",
           end: "top center",
           scrub: 1,
-          markers: true,
+          markers: false,
         },
         y: 50,
       });

@@ -11,39 +11,42 @@ function Navbar() {
   const [cross, setCross] = useState(false);
   const [menu, setMenu] = useState(false);
 
-  const { contextSafe } = useGSAP({
-    scope: navContainer,
-    revertOnUpdate: true,
-  });
+  // const { contextSafe } = useGSAP({
+  //   scope: navContainer,
+  //   revertOnUpdate: true,
+  // });
 
-  useGSAP(() => {
-    gsap.from(".nav", {
-      opacity: 0,
-      x: 2000,
-      duration: 1,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.8,
-      },
-      scrollTrigger: {
-        trigger: navContainer.current,
-        markers: false,
-        start: "top top",
-        toggleActions: "play none none restart",
-      },
-    });
+  const { contextSafe } = useGSAP(
+    () => {
+      gsap.from(".nav", {
+        opacity: 0,
+        x: 2000,
+        duration: 1,
+        ease: "power4.out",
+        stagger: {
+          amount: 0.8,
+        },
+        scrollTrigger: {
+          trigger: navContainer.current,
+          markers: false,
+          start: "top top",
+          toggleActions: "play none none restart",
+        },
+      });
 
-    gsap.to(".nav", {
-      scrollTrigger: {
-        trigger: "#home-contain",
-        markers: true,
-        start: "center center",
-        end: "center center",
-        toggleActions: "restart none none play",
-      },
-      x: 1000,
-    });
-  });
+      gsap.to(".nav", {
+        scrollTrigger: {
+          trigger: "#home-contain",
+          markers: false,
+          start: "center top",
+          end: "center center",
+          toggleActions: "restart none none play",
+        },
+        x: 1000,
+      });
+    },
+    { scope: navContainer.current, revertOnUpdate: true }
+  );
 
   const onMenuOpen = contextSafe(() => {
     setNav(nav ? 0 : 1);
@@ -74,10 +77,11 @@ function Navbar() {
         className={`flex fixed w-full  z-50 justify-between items-center h-20 px-10 ${
           nav ? "" : "backdrop-blur-2xl rounded-full mt-5 "
         }`}>
-        <div className='cursor-pointer nav w-1/2 '>
-          {menu ? (
-            <IoIosMenu />
-          ) : (
+        <div className='cursor-pointer nav w-1/2 flex '>
+          {/* <div>
+            <IoIosMenu className='w-36 text-white' />
+          </div> */}
+          <div>
             <NavLink to='/' onClick={onMenuOpen}>
               <img
                 className='w-36 cursor-pointer'
@@ -85,7 +89,7 @@ function Navbar() {
                 alt='logo'
               />
             </NavLink>
-          )}
+          </div>
         </div>
 
         <div className='flex justify-around gap-10 w-1/2 h-full items-center'>
