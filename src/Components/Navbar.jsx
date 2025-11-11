@@ -38,7 +38,7 @@ function Navbar() {
         },
         scrollTrigger: {
           trigger: "#home-contain",
-          markers: true,
+          markers: false,
           start: "center top",
           end: "center center",
           toggleActions: "restart none none play",

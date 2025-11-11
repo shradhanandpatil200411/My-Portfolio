@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useRef } from "react";
 // import React from "react";
 // import { FaReact } from "react-icons/fa";
 // import { SiRedux } from "react-icons/si";
@@ -10,12 +11,14 @@ import gsap from "gsap";
 // import { FaCss3 } from "react-icons/fa";
 
 function MySkill() {
+  const frontEndRef = useRef();
+  const backEndRef = useRef();
   useGSAP(() => {
     let tl = gsap.timeline();
     tl.from("#stroke-1", {
       drawSVG: 0,
       scrollTrigger: {
-        trigger: "#front-end",
+        trigger: frontEndRef.current,
         markers: false,
         start: "top center",
         end: "center center",
@@ -26,7 +29,7 @@ function MySkill() {
     tl.from("#stroke-2", {
       drawSVG: 0,
       scrollTrigger: {
-        trigger: "#back-end",
+        trigger: backEndRef.current,
         markers: false,
         start: "-150 center",
         end: "top center",
@@ -37,7 +40,7 @@ function MySkill() {
     tl.from("#stroke-3", {
       drawSVG: 0,
       scrollTrigger: {
-        trigger: "#back-end",
+        trigger: backEndRef.current,
         markers: false,
         start: "top center",
         end: "center center",
@@ -56,7 +59,7 @@ function MySkill() {
               </h1>
             </div>
             <div
-              id='front-end'
+              ref={frontEndRef}
               className='absolute left-[39.7%] drop-shadow-2xl drop-shadow-cyan-300'>
               <svg
                 width='252'
@@ -156,7 +159,9 @@ function MySkill() {
                 <h1>Front end Right Side</h1>
               </div>
             </div>
-            <div id='back-end' className='border-2 border-black flex p-5 gap-5'>
+            <div
+              ref={backEndRef}
+              className='border-2 border-black flex p-5 gap-5'>
               <div className='w-1/2 h-[80vh] border-2 border-pink-300'>
                 <h1>Back end Left Side</h1>
               </div>

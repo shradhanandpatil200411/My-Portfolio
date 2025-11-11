@@ -71,19 +71,19 @@ function Loader() {
         <div id='loader-bg' className='flex '>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
         </div>
         <div
           id='logo'
