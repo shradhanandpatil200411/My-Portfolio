@@ -2,7 +2,6 @@ import gsap from "gsap";
 import Navbar from "./Components/Navbar";
 
 import {
-  Draggable,
   DrawSVGPlugin,
   InertiaPlugin,
   ScrollTrigger,
@@ -18,7 +17,6 @@ function App() {
     useGSAP,
     ScrollTrigger,
     SplitText,
-    Draggable,
     InertiaPlugin,
     DrawSVGPlugin
   );

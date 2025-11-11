@@ -14,6 +14,9 @@ function Navbar() {
   const { contextSafe } = useGSAP(
     () => {
       gsap.from(".nav", {
+        onStart: () => {
+          setMenu(false);
+        },
         opacity: 0,
         x: 2000,
         duration: 1,
@@ -30,9 +33,12 @@ function Navbar() {
       });
 
       gsap.to(".nav", {
+        onStart: () => {
+          setMenu(true);
+        },
         scrollTrigger: {
           trigger: "#home-contain",
-          markers: false,
+          markers: true,
           start: "center top",
           end: "center center",
           toggleActions: "restart none none play",
@@ -40,10 +46,11 @@ function Navbar() {
         x: 1000,
       });
     },
-    { scope: navContainer.current, revertOnUpdate: true }
+    { revertOnUpdate: true }
   );
 
   const onMenuOpen = contextSafe(() => {
+    setMenu(false);
     setNav(nav ? 0 : 1);
     setCross(true);
     gsap.to(".nav", {
@@ -55,6 +62,7 @@ function Navbar() {
   });
 
   const onMenuClose = contextSafe(() => {
+    setMenu(true);
     setCross(false);
     setNav(nav ? 0 : 1);
     gsap.to(".nav", {
@@ -72,19 +80,65 @@ function Navbar() {
         className={`flex fixed w-full  z-50 justify-between items-center h-20 px-10 ${
           nav ? "" : "backdrop-blur-2xl rounded-full mt-5 "
         }`}>
-        <div className='cursor-pointer nav w-1/2 flex '>
-          {/* <div>
-            <IoIosMenu className='w-44 text-white' />
-          </div> */}
-          <div>
-            <NavLink to='/' onClick={onMenuOpen}>
-              <img
-                className='w-36 cursor-pointer'
-                src='https://ik.imagekit.io/shradhanand/My-Portfolio/logo.png?updatedAt=1762856366704'
-                alt='logo'
-              />
-            </NavLink>
-          </div>
+        <div className='cursor-pointer nav w-1/2 flex items-center'>
+          {menu ? (
+            <div onClick={onMenuOpen}>
+              <IoIosMenu className='text-6xl bg-cyan-400 p-1 rounded-2xl shadow-2xl shadow-white  text-white' />
+            </div>
+          ) : (
+            <div>
+              <div>
+                <svg
+                  className='w-20 h-20 drop-shadow-xl drop-shadow-cyan-300'
+                  width='271'
+                  height='146'
+                  viewBox='0 0 271 146'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'>
+                  <path
+                    id='logo-1'
+                    d='M49.8581 58.6714C13.3827 58.6714 13.3827 10 49.8581 10C86.3335 10 143.74 10 143.74 10V35.3497'
+                    stroke='white'
+                    stroke-width='20'
+                  />
+                  <path
+                    id='logo-2'
+                    d='M46.8827 58.6754H233.383'
+                    stroke='white'
+                    stroke-width='20'
+                    stroke-linecap='round'
+                  />
+                  <path
+                    id='logo-1'
+                    d='M217.883 87.9511C260.883 87.9511 260.883 135.629 217.883 135.629H143.525V110.797'
+                    stroke='white'
+                    stroke-width='20'
+                  />
+                  <path
+                    id='logo-2'
+                    d='M224.383 87.9535H37.8827'
+                    stroke='white'
+                    stroke-width='20'
+                    stroke-linecap='round'
+                  />
+                  <path
+                    id='logo-3'
+                    d='M235.502 59L260.502 73'
+                    stroke='white'
+                    stroke-width='20'
+                    stroke-linecap='round'
+                  />
+                  <path
+                    id='logo-3'
+                    d='M35.0015 88L10.0015 73'
+                    stroke='white'
+                    stroke-width='20'
+                    stroke-linecap='round'
+                  />
+                </svg>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className='flex justify-around gap-10 w-1/2 h-full items-center'>

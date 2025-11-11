@@ -1,13 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React from "react";
-import { FaReact } from "react-icons/fa";
-import { SiRedux } from "react-icons/si";
-import { SiReactrouter } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-import { RiJavascriptLine } from "react-icons/ri";
-import { RiTailwindCssLine } from "react-icons/ri";
-import { FaCss3 } from "react-icons/fa";
+// import React from "react";
+// import { FaReact } from "react-icons/fa";
+// import { SiRedux } from "react-icons/si";
+// import { SiReactrouter } from "react-icons/si";
+// import { TbBrandNextjs } from "react-icons/tb";
+// import { RiJavascriptLine } from "react-icons/ri";
+// import { RiTailwindCssLine } from "react-icons/ri";
+// import { FaCss3 } from "react-icons/fa";
 
 function MySkill() {
   useGSAP(() => {

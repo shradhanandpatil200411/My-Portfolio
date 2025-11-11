@@ -5,7 +5,6 @@ import { SiExpress } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Draggable } from "gsap/all";
 
 function Hero() {
   useGSAP(() => {

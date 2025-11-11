@@ -37,7 +37,7 @@ function Home() {
       <div
         ref={container}
         className='flex justify-between relative w-screen  h-fit pt-20 '>
-        <div id='home-contain' className='w-1/2 z-20 '>
+        <div id='home-contain' className='w-1/2  '>
           <div className=' flex flex-col pl-10 pt-24 w-full  h-full gap-3'>
             <h2 className='text-3xl '>
               <span className='text-main font-heading-Space-Grotesk'>
