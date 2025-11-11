@@ -11,6 +11,7 @@ import {
 import { useGSAP } from "@gsap/react";
 import LocomotiveScroll from "locomotive-scroll";
 import { useEffect } from "react";
+import Loader from "./Components/Loader";
 
 function App() {
   gsap.registerPlugin(
@@ -28,10 +29,13 @@ function App() {
   }, []);
 
   return (
-    <div className=' font-heading-Poppins  bg-linear-to-t overflow-hidden  from-black via-cyan-950 to-cyan-900   text-white'>
-      <Navbar />
-      <MainRoutes />
-    </div>
+    <>
+      <Loader />
+      {/* <div className=' font-heading-Poppins  bg-linear-to-t overflow-hidden  from-black via-cyan-950 to-cyan-900   text-white'>
+        <Navbar />
+        <MainRoutes />
+      </div> */}
+    </>
   );
 }
 

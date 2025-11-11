@@ -27,6 +27,11 @@
         sans-serif;
 }
 
+@font-face {
+    font-family: NeueRegular;
+    src: url("../public/Font/Neue\ Machina/NeueMachina-Regular.oft");
+}
+
 
 body{
     font-family: "Roboto",

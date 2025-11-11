@@ -51,7 +51,7 @@ function Home() {
               Shradhanand Patil
             </h1>
             <p className='text-sm'>
-              MRNE Stack Developer | Animation Enthusiast
+              MERN Stack Developer | Animation Enthusiast
             </p>
             <p className='text-sm '>
               Building modern web experiences with MongoDB, React, Node.js,

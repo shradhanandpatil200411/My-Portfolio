@@ -44,11 +44,6 @@ function MySkill() {
         scrub: true,
       },
     });
-
-    tl.from("#react", {
-      drawSVG: 0,
-      duration: 3,
-    });
   });
   return (
     <>
@@ -117,8 +112,8 @@ function MySkill() {
               id='front-end'
               className='border-2 border-cyan-300 flex p-5 gap-5'>
               <div className='w-1/2 h-[80vh] border-2 border-pink-300'>
-                <div>
-                  <FaReact />
+                {/* <div className='flex justify-center '>
+                  <FaReact className='w-20 h-20 text-cyan-400 ' id='react' />
                   <p>
                     Powerful JavaScript library for building interactive UIs.
                   </p>
@@ -155,7 +150,7 @@ function MySkill() {
                   <p>
                     Styles web pages for layout, design, and responsiveness.
                   </p>
-                </div>
+                </div> */}
               </div>
               <div className='w-1/2 h-[80vh] border-2 border-red-600'>
                 <h1>Front end Right Side</h1>

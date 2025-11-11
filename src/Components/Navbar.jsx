@@ -11,11 +11,6 @@ function Navbar() {
   const [cross, setCross] = useState(false);
   const [menu, setMenu] = useState(false);
 
-  // const { contextSafe } = useGSAP({
-  //   scope: navContainer,
-  //   revertOnUpdate: true,
-  // });
-
   const { contextSafe } = useGSAP(
     () => {
       gsap.from(".nav", {
@@ -79,7 +74,7 @@ function Navbar() {
         }`}>
         <div className='cursor-pointer nav w-1/2 flex '>
           {/* <div>
-            <IoIosMenu className='w-36 text-white' />
+            <IoIosMenu className='w-44 text-white' />
           </div> */}
           <div>
             <NavLink to='/' onClick={onMenuOpen}>
