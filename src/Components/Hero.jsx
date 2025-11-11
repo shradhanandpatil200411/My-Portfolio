@@ -61,7 +61,7 @@ function Hero() {
         <div className='w-[90%]'>
           <img
             className='z-20  mx-20 '
-            src='../../public/Images/my-3D-model-img.png'
+            src='https://ik.imagekit.io/shradhanand/My-Portfolio/my-3D-model-img.png?updatedAt=1762856366757'
             alt='img-hero'
           />
         </div>

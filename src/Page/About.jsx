@@ -56,7 +56,7 @@ function About() {
           <img
             id='my-img'
             className='h-[90%] w-full drop-shadow-xl drop-shadow-black'
-            src='../../public/Images/my-3D-model-2.png'
+            src='https://ik.imagekit.io/shradhanand/My-Portfolio/my-3D-model-2.png?updatedAt=1762856366819'
             alt='3D-Model'
           />
         </div>

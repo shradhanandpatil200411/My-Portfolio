@@ -80,7 +80,7 @@ function Navbar() {
             <NavLink to='/' onClick={onMenuOpen}>
               <img
                 className='w-36 cursor-pointer'
-                src='../../public/Images/logo.png'
+                src='https://ik.imagekit.io/shradhanand/My-Portfolio/logo.png?updatedAt=1762856366704'
                 alt='logo'
               />
             </NavLink>
