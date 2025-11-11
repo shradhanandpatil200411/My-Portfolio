@@ -1,7 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { FaGithub } from "react-icons/fa";
-import { CiLinkedin } from "react-icons/ci";
 import MySkill from "./MySkill";
 
 function About() {
@@ -87,10 +85,16 @@ function About() {
               </h1>
               <div id='social-icons' className='flex gap-5'>
                 <div className=' text-white hover:text-gold hover:drop-shadow-xl hover:drop-shadow-gold transition-all  cursor-pointer p-5 w-fit mt-2'>
-                  <FaGithub className='w-20 h-20 ' />
+                  <img
+                    src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/git.png?updatedAt=1762872748886'
+                    className='w-20 h-20 '
+                  />
                 </div>
                 <div className=' text-white hover:text-gold hover:drop-shadow-xl hover:drop-shadow-gold transition-all  cursor-pointer p-5 w-fit mt-2'>
-                  <CiLinkedin className='w-20 h-20 ' />
+                  <img
+                    src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/Linkedin.png?updatedAt=1762872748966'
+                    className='w-20 h-20 '
+                  />
                 </div>
               </div>
             </div>

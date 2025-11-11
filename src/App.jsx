@@ -9,9 +9,9 @@ import {
 } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import LocomotiveScroll from "locomotive-scroll";
-import { useEffect, useRef, useState } from "react";
+import { lazy, useEffect, useRef, useState } from "react";
 import MainRoutes from "./Routes/MainRoutes";
-import Loader from "./Components/Loader";
+const Loader = lazy(() => import("./Components/Loader"));
 
 function App() {
   const [isPageLoad, setIsPageLoad] = useState(false);
@@ -28,19 +28,11 @@ function App() {
     // eslint-disable-next-line no-unused-vars
     const locomotiveScroll = new LocomotiveScroll();
 
-    const onPageLoad = () => {
+    setTimeout(() => {
       setIsPageLoad(true);
-    };
-
-    // Check if the page has already loaded
-    if (document.readyState === "complete") {
-      onPageLoad();
-    } else {
-      window.addEventListener("load", onPageLoad);
-      // Clean up the event listener when the component unmounts
-      return () => window.removeEventListener("load", onPageLoad);
-    }
-  }, []);
+      console.log(isPageLoad);
+    }, 11000);
+  }, [isPageLoad]);
 
   return (
     <>
