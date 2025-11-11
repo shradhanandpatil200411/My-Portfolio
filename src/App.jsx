@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import Navbar from "./Components/Navbar";
-import MainRoutes from "./Routes/mainRoutes";
+
 import {
   Draggable,
   DrawSVGPlugin,
@@ -11,6 +11,7 @@ import {
 import { useGSAP } from "@gsap/react";
 import LocomotiveScroll from "locomotive-scroll";
 import { useEffect } from "react";
+import MainRoutes from "./Routes/MainRoutes";
 
 function App() {
   gsap.registerPlugin(
