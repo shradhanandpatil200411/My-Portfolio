@@ -51,12 +51,9 @@ function Loader() {
     });
 
     tl.to("#loader-bg", {
-      y: 500,
+      opacity: 0,
       display: "none",
       duration: 1.5,
-      stagger: {
-        amount: -1,
-      },
     });
 
     tl.to("#loader", {
@@ -67,7 +64,7 @@ function Loader() {
     <>
       <div
         id='loader'
-        className='w-screen h-screen absolute z-50 bg-transparent overflow-y-hidden'>
+        className='w-screen h-screen absolute z-50 bg-dark overflow-y-hidden'>
         <div id='loader-bg' className='flex '>
           <div
             id='loader-bg'

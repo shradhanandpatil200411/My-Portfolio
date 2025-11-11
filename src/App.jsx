@@ -24,6 +24,14 @@ function App() {
     DrawSVGPlugin
   );
 
+  useGSAP(() => {
+    gsap.from(appRef.current, {
+      x: 1000,
+      opacity: 0,
+      duration: 2,
+    });
+  });
+
   useEffect(() => {
     // eslint-disable-next-line no-unused-vars
     const locomotiveScroll = new LocomotiveScroll();
@@ -31,7 +39,7 @@ function App() {
     setTimeout(() => {
       setIsPageLoad(true);
       console.log(isPageLoad);
-    }, 11000);
+    }, 12000);
   }, [isPageLoad]);
 
   return (
