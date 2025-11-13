@@ -42,15 +42,43 @@ function About() {
         },
         y: 50,
       });
+
+      // gsap.from("#about-stroke", {
+      //   drawSVG: 0,
+      //   scrollTrigger: {
+      //     trigger: "#about-contain",
+      //     markers: true,
+      //     start: "top center",
+      //     end: "200% center",
+      //     scrub: true,
+      //   },
+      // });
     },
     { scope: "#about" }
   );
   return (
     <>
-      <div id='about' className=' flex  gap-20 p-10'>
+      <div id='about' className=' flex  gap-20 p-10 relative'>
+        {/* <div className='absolute -right-10 top-0 '>
+          <svg
+            className='-z-10'
+            width='1301'
+            height='537'
+            viewBox='0 0 1301 537'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'>
+            <path
+              id='about-stroke'
+              d='M1290.5 37.2857C1173.5 -79.2142 317.336 206.446 569.419 346.487C821.502 486.529 639.129 596.668 10.002 472.786'
+              stroke='#01d3f5'
+              stroke-width='20'
+              stroke-linecap='round'
+            />
+          </svg>
+        </div> */}
         <div
           id='about-img'
-          className='h-[80vh] mt-10  px-10 pt-10 rounded-t-full bg-linear-to-b from-amber-200 to-amber-600 w-[35vw] overflow-hidden'>
+          className='h-[80vh] mt-10  px-10 pt-10 rounded-t-full bg-linear-to-b from-amber-200 to-amber-600 w-[35vw] overflow-hidden z-20'>
           <img
             id='my-img'
             className='h-[90%] w-full drop-shadow-xl drop-shadow-black'
@@ -58,7 +86,7 @@ function About() {
             alt='3D-Model'
           />
         </div>
-        <div className='w-1/2 '>
+        <div className='w-1/2 z-20'>
           <div className=' mx-auto mt-20 flex flex-col gap-10'>
             <h1 className='text-6xl font-heading-Space-Grotesk font-bold '>
               About Me

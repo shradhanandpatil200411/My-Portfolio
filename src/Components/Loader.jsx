@@ -51,6 +51,10 @@ function Loader() {
     });
 
     tl.to("#loader-bg", {
+      y: -500,
+      stagger: {
+        amount: -0.5,
+      },
       opacity: 0,
       display: "none",
       duration: 1.5,
@@ -64,23 +68,23 @@ function Loader() {
     <>
       <div
         id='loader'
-        className='w-screen h-screen absolute z-50 bg-dark overflow-y-hidden'>
+        className='w-screen h-screen absolute z-50 bg-cyan-800 overflow-y-hidden'>
         <div id='loader-bg' className='flex '>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
           <div
             id='loader-bg'
-            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-1/5'></div>
+            className='bg-linear-to-b from-cyan-950 to-cyan-700 h-screen w-[20%]'></div>
         </div>
         <div
           id='logo'

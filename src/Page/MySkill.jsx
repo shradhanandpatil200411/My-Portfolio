@@ -1,20 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
-// import React from "react";
-// import { FaReact } from "react-icons/fa";
-// import { SiRedux } from "react-icons/si";
-// import { SiReactrouter } from "react-icons/si";
-// import { TbBrandNextjs } from "react-icons/tb";
-// import { RiJavascriptLine } from "react-icons/ri";
-// import { RiTailwindCssLine } from "react-icons/ri";
-// import { FaCss3 } from "react-icons/fa";
 
 function MySkill() {
   const frontEndRef = useRef();
   const backEndRef = useRef();
   useGSAP(() => {
     let tl = gsap.timeline();
+
     tl.from("#stroke-1", {
       drawSVG: 0,
       scrollTrigger: {
@@ -47,12 +40,18 @@ function MySkill() {
         scrub: true,
       },
     });
+
+    gsap.from("#skills", {
+      opacity: 0,
+      y: 10,
+      duration: 2,
+    });
   });
   return (
     <>
-      <div>
-        <div className='p-5 border-2 border-green-400'>
-          <div className='border-2 border-amber-400 p-10 relative'>
+      <div id='mySkill'>
+        <div className='p-5  relative'>
+          <div className=' p-10 relative'>
             <div className='w-fit mx-auto'>
               <h1 className='w-full h-full text-4xl font-bold font-heading-Poppins'>
                 My Skills
@@ -60,7 +59,7 @@ function MySkill() {
             </div>
             <div
               ref={frontEndRef}
-              className='absolute left-[39.7%] drop-shadow-2xl drop-shadow-cyan-300'>
+              className='absolute left-[39.7%] drop-shadow-2xl '>
               <svg
                 width='252'
                 height='608'
@@ -111,61 +110,28 @@ function MySkill() {
                 />
               </svg>
             </div>
-            <div
-              id='front-end'
-              className='border-2 border-cyan-300 flex p-5 gap-5'>
-              <div className='w-1/2 h-[80vh] border-2 border-pink-300'>
-                {/* <div className='flex justify-center '>
-                  <FaReact className='w-20 h-20 text-cyan-400 ' id='react' />
+            <div id='front-end' className='flex p-5 gap-5'>
+              <div className='w-1/2 h-[80vh] '></div>
+              <div className='w-1/2 h-[80vh] '>
+                <div
+                  id='skills'
+                  className='flex justify-center border-cyan-400 border items-center mx-auto w-8/12 p-5'>
+                  <img
+                    src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/react-icon.png?updatedAt=1762871383166'
+                    className='w-20 h-20 text-cyan-400 '
+                    id='react'
+                  />
                   <p>
                     Powerful JavaScript library for building interactive UIs.
                   </p>
                 </div>
-                <div>
-                  <SiRedux />
-                  <p>State management library for predictable data flow.</p>
-                </div>
-                <div>
-                  <SiReactrouter />
-                  <p>
-                    Handles navigation and routing in single-page React apps.
-                  </p>
-                </div>
-                <div>
-                  <TbBrandNextjs />
-                  <p>
-                    React framework for server-side rendering and static sites
-                  </p>
-                </div>
-                <div>
-                  <RiJavascriptLine />
-                  <p>
-                    Core scripting language for web development and
-                    interactivity.
-                  </p>
-                </div>
-                <div>
-                  <RiTailwindCssLine />
-                  <p>Utility-first CSS framework for rapid custom styling.</p>
-                </div>
-                <div>
-                  <FaCss3 />
-                  <p>
-                    Styles web pages for layout, design, and responsiveness.
-                  </p>
-                </div> */}
-              </div>
-              <div className='w-1/2 h-[80vh] border-2 border-red-600'>
-                <h1>Front end Right Side</h1>
               </div>
             </div>
-            <div
-              ref={backEndRef}
-              className='border-2 border-black flex p-5 gap-5'>
-              <div className='w-1/2 h-[80vh] border-2 border-pink-300'>
+            <div ref={backEndRef} className=' flex p-5 gap-5'>
+              <div className='w-1/2 h-[80vh] '>
                 <h1>Back end Left Side</h1>
               </div>
-              <div className='w-1/2 h-[80vh] border-2 border-red-600'>
+              <div className='w-1/2 h-[80vh] '>
                 <h1>Back end Right Side</h1>
               </div>
             </div>
