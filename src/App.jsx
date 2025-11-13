@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import {
   DrawSVGPlugin,
   InertiaPlugin,
+  MotionPathPlugin,
   ScrollTrigger,
   SplitText,
 } from "gsap/all";
@@ -11,6 +12,8 @@ import { useGSAP } from "@gsap/react";
 import LocomotiveScroll from "locomotive-scroll";
 import { lazy, useEffect, useRef, useState } from "react";
 import MainRoutes from "./Routes/MainRoutes";
+import Skills from "./Page/Skills";
+import About from "./Page/About";
 const Loader = lazy(() => import("./Components/Loader"));
 
 function App() {
@@ -21,7 +24,8 @@ function App() {
     ScrollTrigger,
     SplitText,
     InertiaPlugin,
-    DrawSVGPlugin
+    DrawSVGPlugin,
+    MotionPathPlugin
   );
 
   useGSAP(() => {
@@ -47,7 +51,7 @@ function App() {
       {isPageLoad ? (
         <div
           ref={appRef}
-          className=' font-heading-Poppins  bg-linear-to-t overflow-hidden  from-black via-cyan-950 to-cyan-900   text-white'>
+          className=' font-heading-Poppins  bg-linear-to-b overflow-hidden  from-black via-cyan-950 to-cyan-900   text-white'>
           <Navbar />
           <MainRoutes />
         </div>

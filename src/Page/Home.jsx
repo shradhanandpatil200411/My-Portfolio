@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import About from "./About";
 import { useRef } from "react";
+import Skills from "./Skills";
 
 function Home() {
   const container = useRef();
@@ -71,6 +72,9 @@ function Home() {
       </div>
       <div>
         <About />
+      </div>
+      <div>
+        <Skills />
       </div>
     </>
   );

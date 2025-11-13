@@ -1,6 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import MySkill from "./MySkill";
 
 function About() {
   useGSAP(
@@ -42,17 +41,6 @@ function About() {
         },
         y: 50,
       });
-
-      // gsap.from("#about-stroke", {
-      //   drawSVG: 0,
-      //   scrollTrigger: {
-      //     trigger: "#about-contain",
-      //     markers: true,
-      //     start: "top center",
-      //     end: "200% center",
-      //     scrub: true,
-      //   },
-      // });
     },
     { scope: "#about" }
   );
@@ -128,9 +116,6 @@ function About() {
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        <MySkill />
       </div>
     </>
   );

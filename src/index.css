@@ -12,6 +12,7 @@
     --color-gold-2:#9e8123;
     --color-main:#04e4d8;
     --color-main-light:#7feddf;
+    --color-my-stroke: linear-gradient(90deg, rgba(16, 169, 230, 1) 0%, rgba(14, 228, 240, 1) 50%, rgba(5, 39, 48, 1) 100%)
 
     --font-heading-Poppins : "Poppins",
         sans-serif;
