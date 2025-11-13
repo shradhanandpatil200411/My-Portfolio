@@ -21,7 +21,7 @@ function Navbar() {
         },
         opacity: 0,
         x: 2000,
-        duration: 1,
+        duration: 0.5,
         ease: "power4.out",
         stagger: {
           amount: 0.8,

@@ -15,9 +15,9 @@ export const mySkillData = [
       "https://ik.imagekit.io/shradhanand/My-Portfolio/icon/nodeJs-icon.png?updatedAt=1762871383081",
     name: "Node Js",
     dis: "JavaScript runtime for building scalable server apps.",
-    color1: "#F75E05",
-    color2: "#D98B04",
-    color3: "#F5CF38",
+    color1: "#05692B",
+    color2: "#067534",
+    color3: "#00F566",
     id: 2,
   },
   {

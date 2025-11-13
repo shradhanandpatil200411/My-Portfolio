@@ -24,12 +24,26 @@ function Skills() {
           start: "0.6",
         },
         ease: "power2",
+        scrollTrigger: {
+          trigger: mySkillRef.current,
+          markers: false,
+          toggleActions: "play none none restart",
+          start: "30% center",
+          end: "30% center",
+        },
       });
 
       gsap.from(headingRef.current, {
         x: 200,
         opacity: 0,
         duration: 1,
+        scrollTrigger: {
+          trigger: mySkillRef.current,
+          markers: false,
+          toggleActions: "play none none restart",
+          start: "30% center",
+          end: "30% center",
+        },
       });
       gsap.from(paraRef.current, {
         x: -100,
@@ -136,7 +150,7 @@ function Skills() {
             className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer'
             onClick={() => onAnimation(0)}>
             <img
-              className='w-24 mx-auto'
+              className='w-24 h-24 mx-auto'
               src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/react-icon.png?updatedAt=1762871383166'
               alt='rect'
             />
@@ -146,7 +160,7 @@ function Skills() {
             className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer'
             onClick={() => onAnimation(1)}>
             <img
-              className='w-24 mx-auto'
+              className='w-24 h-24 mx-auto'
               src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/nodeJs-icon.png?updatedAt=1762871383081'
               alt='node'
             />
@@ -156,7 +170,7 @@ function Skills() {
             className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer '
             onClick={() => onAnimation(2)}>
             <img
-              className='w-24 mx-auto'
+              className='w-24 h-24 mx-auto'
               src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/express-removebg.png?updatedAt=1762871383116'
               alt='express'
             />
@@ -166,7 +180,7 @@ function Skills() {
             className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer'
             onClick={() => onAnimation(3)}>
             <img
-              className='w-24 mx-auto'
+              className='w-24 h-24 mx-auto'
               src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/MongoDB_logo.png?updatedAt=1762871383046'
               alt='mongoDB'
             />
@@ -176,7 +190,7 @@ function Skills() {
             className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer'
             onClick={() => onAnimation(4)}>
             <img
-              className='w-24 mx-auto'
+              className='w-24 h-24 mx-auto'
               src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/next.png?updatedAt=1762871383091'
               alt='NextJs'
             />
