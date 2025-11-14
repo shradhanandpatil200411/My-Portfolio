@@ -1,10 +1,17 @@
-import React from "react";
-
-function SkillsCard({ onAnimation, id, name, iconImg }) {
+function SkillsCard({ onAnimation, id, name, iconImg, index }) {
   return (
     <>
       <div
-        className='w-40 h-40  cursor-pointer rounded-4xl  text-center  border-2 items-center flex flex-col justify-center '
+        className='w-40 h-40 cursor-pointer rounded-4xl  text-center  items-center flex flex-col justify-center '
+        style={
+          index == id
+            ? {
+                backdropFilter: "blur(24px)",
+                webkitBackdropFilter: "blur(5px)",
+                backgroundColor: "rgba(255, 255, 255, 0.4)",
+              }
+            : { backgroundColor: "transparent" }
+        }
         onClick={() => onAnimation(id)}>
         <div>
           <img

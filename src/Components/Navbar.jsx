@@ -80,7 +80,7 @@ function Navbar() {
       <nav
         ref={navContainer}
         className={`flex fixed w-full  z-50 justify-between items-center h-20 px-10 ${
-          nav ? "" : "backdrop-blur-2xl rounded-full mt-5"
+          nav ? "" : "backdrop-blur-2xl bg-white/20 rounded-full mt-5"
         }`}>
         <div className='cursor-pointer nav w-1/2 flex items-center'>
           {menu ? (

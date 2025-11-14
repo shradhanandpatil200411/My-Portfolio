@@ -81,7 +81,7 @@ function Hero() {
           </div>
           <div className='icon w-20 h-20 absolute top-13 right-5'>
             <img
-              src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/express-removebg.png?updatedAt=1762871383116'
+              src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/Express%20(1).png?updatedAt=1763115676583'
               className='text-gray drop-shadow-gray-300 drop-shadow-2xl w-full h-full'
             />
           </div>

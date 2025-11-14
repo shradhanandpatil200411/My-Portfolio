@@ -6,6 +6,7 @@ import SkillsCard from "../Components/SkillsCard";
 
 function Skills() {
   const [index, setIndex] = useState(0);
+  const [isDetails, setIsDetails] = useState(false);
   const mySkillRef = useRef();
   const headingRef = useRef();
   const paraRef = useRef();
@@ -47,7 +48,7 @@ function Skills() {
         },
       });
       gsap.from(paraRef.current, {
-        x: -100,
+        y: 100,
         opacity: 0,
         duration: 1,
       });
@@ -77,7 +78,7 @@ function Skills() {
         duration: 1,
       });
       gsap.to(paraRef.current, {
-        x: -100,
+        y: 100,
         opacity: 0,
         duration: 1,
       });
@@ -87,16 +88,16 @@ function Skills() {
   return (
     <>
       <div ref={mySkillRef} className='w-screen  pr-5 pb-10'>
-        <h1 className='w-fit mx-auto  mb-5 p-2 text-6xl font-bold font-heading-Montserrat bg-clip-text text-transparent bg-linear-to-r from-gradient-1 via-gradient-2 to-gradient-3'>
+        <h1 className='w-fit ml-[30%] mb-5 p-2 text-6xl font-bold font-heading-Montserrat bg-clip-text text-transparent bg-linear-to-r from-gradient-1 via-gradient-2 to-gradient-3'>
           My Skills
         </h1>
-        <div className='flex w-full h-[60vh] gap-5 relative'>
-          <div className=' w-6/12 h-full relative overflow-hidden'>
+        <div className='flex w-[120%] h-[60vh] relative'>
+          <div className='w-4/12  h-full relative overflow-hidden'>
             <div>
               <svg
                 width='610'
                 height='350'
-                viewBox='100 100 745 500'
+                viewBox='100 100 850 500'
                 fill='none'
                 xmlns='http://www.w3.org/2000/svg'>
                 <defs>
@@ -125,11 +126,11 @@ function Skills() {
               />
             </div>
           </div>
-          <div className='w-1/2 h-full absolute left-[35%]  top-24'>
-            <div>
+          <div className='w-8/12 h-full flex  absolute left-[30%]'>
+            <div className='w-fit flex justify-center flex-col'>
               <h1
                 ref={headingRef}
-                className='font-heading-Space-Grotesk text-9xl font-bold z-20 tracking-tighter'
+                className='font-heading-Space-Grotesk text-8xl font-bold z-20 tracking-tighter'
                 style={{
                   backgroundImage: `linear-gradient(to bottom, ${mySkillData[index].color1}, ${mySkillData[index].color2} , ${mySkillData[index].color3})`,
                   backgroundClip: "text",
@@ -138,11 +139,64 @@ function Skills() {
                 {mySkillData[index]?.name}
               </h1>
             </div>
-            <p
+            <div
               ref={paraRef}
-              className='text-xl w-8/12 pt-5 tracking-wide font-semibold'>
-              {mySkillData[index]?.dis}
-            </p>
+              className='text-white w-[30%] m-10 rounded-2xl p-5 backdrop-blur-3xl bg-white/20 '
+              style={{
+                boxShadow: `5px 10px 20px ${mySkillData[index].color2} `,
+              }}>
+              <div>
+                <div className='flex justify-evenly'>
+                  <div
+                    className={`cursor-pointer font-semibold`}
+                    style={
+                      isDetails
+                        ? { color: "white" }
+                        : { color: `${mySkillData[index].color3}` }
+                    }
+                    onClick={() => setIsDetails(false)}>
+                    Overview
+                  </div>
+                  <div
+                    className='cursor-pointer font-semibold'
+                    style={
+                      isDetails
+                        ? { color: `${mySkillData[index].color3}` }
+                        : { color: "white" }
+                    }
+                    onClick={() => setIsDetails(true)}>
+                    Details
+                  </div>
+                </div>
+                {isDetails ? (
+                  <div className='mt-5'>
+                    {mySkillData[index].relatedTech.map((data, index) => (
+                      <ul key={index}>
+                        <li className='text-sm my-1'>
+                          <span className='font-semibold'>{data.name}</span> :{" "}
+                          <span>{data.dis}</span>{" "}
+                        </li>
+                      </ul>
+                    ))}
+                  </div>
+                ) : (
+                  <div className='mt-2'>
+                    <div className='flex items-center gap-5'>
+                      <img
+                        className='w-20 h-20'
+                        src={mySkillData[index].iconImg}
+                        alt='icon-img'
+                      />
+                      <h1 className='text-xl'>
+                        V {mySkillData[index].version}
+                      </h1>
+                    </div>
+
+                    <p className='text-sm mt-2'>{mySkillData[index].dis}</p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
         <div className=' flex justify-evenly gap-2 h-[30vh] '>
@@ -153,6 +207,7 @@ function Skills() {
               id={card.id}
               iconImg={card.iconImg}
               name={card.name}
+              index={index}
             />
           ))}
         </div>
