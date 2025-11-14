@@ -59,12 +59,12 @@ function About() {
         </div>
         <div className='w-1/2 z-20'>
           <div className=' mx-auto mt-20 flex flex-col gap-10'>
-            <h1 className='text-6xl font-heading-Space-Grotesk font-bold '>
+            <h1 className='text-8xl font-heading-Space-Grotesk font-bold '>
               About Me
             </h1>
             <div id='about-contain'>
               <p className='tracking-widest'>
-                Hello! I’m
+                Hello! I’m{" "}
                 <span className='text-gold font-bold font-heading-Space-Grotesk'>
                   Shradhanand Patil
                 </span>

@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import { mySkillData } from "../Data/data";
+import SkillsCard from "../Components/SkillsCard";
 
 function Skills() {
   const [index, setIndex] = useState(0);
@@ -85,16 +86,15 @@ function Skills() {
 
   return (
     <>
-      <div ref={mySkillRef} className=' w-screen h-screen pr-5 py-10'>
-        <h1 className='w-fit ml-[36%] my-2 text-4xl font-bold font-heading-Montserrat'>
+      <div ref={mySkillRef} className='w-screen  pr-5 pb-10'>
+        <h1 className='w-fit mx-auto  mb-5 p-2 text-6xl font-bold font-heading-Montserrat bg-clip-text text-transparent bg-linear-to-r from-gradient-1 via-gradient-2 to-gradient-3'>
           My Skills
         </h1>
-        <div className='flex w-full h-[60vh] gap-5'>
-          <div className=' w-4/12 h-full relative overflow-hidden'>
+        <div className='flex w-full h-[60vh] gap-5 relative'>
+          <div className=' w-6/12 h-full relative overflow-hidden'>
             <div>
               <svg
-                className=''
-                width='410'
+                width='610'
                 height='350'
                 viewBox='100 100 745 500'
                 fill='none'
@@ -116,7 +116,7 @@ function Skills() {
                 />
               </svg>
             </div>
-            <div className='absolute left-52 z-50 top-20 '>
+            <div>
               <img
                 id='skill-icon'
                 className='w-40 h-40 '
@@ -125,8 +125,8 @@ function Skills() {
               />
             </div>
           </div>
-          <div className='w-1/2 h-full'>
-            <div className='overflow-hidden'>
+          <div className='w-1/2 h-full absolute left-[35%]  top-24'>
+            <div>
               <h1
                 ref={headingRef}
                 className='font-heading-Space-Grotesk text-9xl font-bold z-20 tracking-tighter'
@@ -146,56 +146,15 @@ function Skills() {
           </div>
         </div>
         <div className=' flex justify-evenly gap-2 h-[30vh] '>
-          <div
-            className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer'
-            onClick={() => onAnimation(0)}>
-            <img
-              className='w-24 h-24 mx-auto'
-              src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/react-icon.png?updatedAt=1762871383166'
-              alt='rect'
+          {mySkillData.map((card) => (
+            <SkillsCard
+              key={card.id}
+              onAnimation={onAnimation}
+              id={card.id}
+              iconImg={card.iconImg}
+              name={card.name}
             />
-            <h1 className='text-xl '>React</h1>
-          </div>
-          <div
-            className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer'
-            onClick={() => onAnimation(1)}>
-            <img
-              className='w-24 h-24 mx-auto'
-              src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/nodeJs-icon.png?updatedAt=1762871383081'
-              alt='node'
-            />
-            <h1 className='text-xl'>Node</h1>
-          </div>
-          <div
-            className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer '
-            onClick={() => onAnimation(2)}>
-            <img
-              className='w-24 h-24 mx-auto'
-              src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/express-removebg.png?updatedAt=1762871383116'
-              alt='express'
-            />
-            <h1 className='text-xl'>Express</h1>
-          </div>
-          <div
-            className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer'
-            onClick={() => onAnimation(3)}>
-            <img
-              className='w-24 h-24 mx-auto'
-              src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/MongoDB_logo.png?updatedAt=1762871383046'
-              alt='mongoDB'
-            />
-            <h1 className='text-xl'>MongoDB</h1>
-          </div>
-          <div
-            className='w-40 p-2 backdrop-blur-3xl rounded-4xl  text-center h-32 cursor-pointer'
-            onClick={() => onAnimation(4)}>
-            <img
-              className='w-24 h-24 mx-auto'
-              src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/next.png?updatedAt=1762871383091'
-              alt='NextJs'
-            />
-            <h1 className='text-xl'>Next JS</h1>
-          </div>
+          ))}
         </div>
       </div>
     </>
