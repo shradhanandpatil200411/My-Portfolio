@@ -179,8 +179,8 @@ function Navbar() {
                   ? "border-b-cyan-400 border-b-2 text-cyan-400 font-semibold"
                   : "text-white"
               }
-              to='/resume'>
-              Resume
+              to='/Skills'>
+              Skills
             </NavLink>
           </div>
           <div className='cursor-pointer nav '>
@@ -190,7 +190,7 @@ function Navbar() {
                   ? "border-b-cyan-400 border-b-2 text-cyan-400 font-semibold"
                   : "text-white"
               }
-              to='/contact-us'>
+              to='/contact'>
               Contact
             </NavLink>
           </div>

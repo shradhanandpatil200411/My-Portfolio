@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap, { Bounce } from "gsap";
 import { useRef } from "react";
+import { NavLink } from "react-router";
 
 function Contact() {
   const contactRef = useRef();
@@ -117,7 +118,7 @@ function Contact() {
     });
     gsap.from(".footerMessage", {
       opacity: 0,
-      x: 100,
+      x: 500,
       stagger: {
         amount: 1,
       },
@@ -135,7 +136,7 @@ function Contact() {
     <>
       <div ref={mainContainer} className='mt-20 w-screen h-screen relative'>
         <div ref={contactContainer}>
-          <div className='bg-white backdrop-blur-2xl w-7/12 mx-auto h-full relative z-10'>
+          <div className='bg-white backdrop-blur-2xl w-7/12 mx-auto h-full relative z-50'>
             <div
               ref={contactRef}
               className='w-1/2 h-9/12 absolute -left-40 top-20 px-10'
@@ -169,16 +170,24 @@ function Contact() {
                 <div className='my-7'>
                   <h1 className='text-xl  my-4'>Find Me On</h1>
                   <div className='flex gap-10 '>
-                    <img
-                      className='w-10 h-10 rounded-xl hover:shadow-md duration-500 cursor-pointer shadow-main bg-dark hover:border hover:border-main transition-all p-2'
-                      src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/git.png?updatedAt=1762872748886'
-                      alt='git-hub'
-                    />
-                    <img
-                      className='w-10 h-10 rounded-xl hover:shadow-md duration-500 cursor-pointer shadow-main bg-dark hover:border hover:border-main transition-all p-2'
-                      src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/Linkedin.png?updatedAt=1762872748966'
-                      alt='linkedin'
-                    />
+                    <NavLink
+                      to='https://github.com/shradhanandpatil200411'
+                      target='_'>
+                      <img
+                        className='w-10 h-10 rounded-xl hover:shadow-md duration-500 cursor-pointer shadow-main bg-dark hover:border hover:border-main transition-all p-2'
+                        src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/git.png?updatedAt=1762872748886'
+                        alt='git-hub'
+                      />
+                    </NavLink>
+                    <NavLink
+                      to='https://www.linkedin.com/in/shradhanand-patil-0b11a6224/'
+                      target='_'>
+                      <img
+                        className='w-10 h-10 rounded-xl hover:shadow-md duration-500 cursor-pointer shadow-main bg-dark hover:border hover:border-main transition-all p-2'
+                        src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/Linkedin.png?updatedAt=1762872748966'
+                        alt='linkedin'
+                      />
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -278,7 +287,7 @@ function Contact() {
         </div>
         <div
           ref={footerMessage}
-          className='absolute top-50 flex gap-60  w-screen '>
+          className='absolute top-50 flex gap-60  w-screen -z-10'>
           <h1 className='text-[250px] z-10 tracking-wider bg-clip-text text-transparent bg-[url(https://i.pinimg.com/1200x/2b/7b/46/2b7b46b48f49ed3af2a039bfd2793b87.jpg)] bg-cover bg-center font-[StorkFont]  footerMessage'>
             Thank
           </h1>

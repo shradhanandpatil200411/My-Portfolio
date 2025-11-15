@@ -1,5 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { NavLink } from "react-router";
 
 function About() {
   useGSAP(
@@ -83,18 +84,24 @@ function About() {
                 Find Me On
               </h1>
               <div id='social-icons' className='flex gap-5'>
-                <div className=' text-white hover:text-gold hover:drop-shadow-xl hover:drop-shadow-gold transition-all  cursor-pointer p-5 w-fit mt-2'>
+                <NavLink
+                  target='_'
+                  to='https://github.com/shradhanandpatil200411'
+                  className=' text-white hover:text-gold hover:drop-shadow-xl hover:drop-shadow-gold transition-all  cursor-pointer p-5 w-fit mt-2'>
                   <img
                     src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/git.png?updatedAt=1762872748886'
                     className='w-20 h-20 '
                   />
-                </div>
-                <div className=' text-white hover:text-gold hover:drop-shadow-xl hover:drop-shadow-gold transition-all  cursor-pointer p-5 w-fit mt-2'>
+                </NavLink>
+                <NavLink
+                  target='_'
+                  to='https://www.linkedin.com/in/shradhanand-patil-0b11a6224/'
+                  className=' text-white hover:text-gold hover:drop-shadow-xl hover:drop-shadow-gold transition-all  cursor-pointer p-5 w-fit mt-2'>
                   <img
                     src='https://ik.imagekit.io/shradhanand/My-Portfolio/icon/Linkedin.png?updatedAt=1762872748966'
                     className='w-20 h-20 '
                   />
-                </div>
+                </NavLink>
               </div>
             </div>
           </div>
