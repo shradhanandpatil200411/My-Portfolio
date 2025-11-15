@@ -5,6 +5,8 @@ import { SplitText } from "gsap/all";
 import About from "./About";
 import { useRef } from "react";
 import Skills from "./Skills";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 function Home() {
   const container = useRef();
@@ -39,12 +41,10 @@ function Home() {
         ref={container}
         className='flex justify-between relative w-screen  h-fit pt-20 '>
         <div id='home-contain' className='w-1/2  '>
-          <div className=' flex flex-col pl-10 pt-24 w-full  h-full gap-3'>
+          <div className=' flex flex-col pl-10 pt-24 w-full font-heading-Montserrat  h-full gap-3'>
             <h2 className='text-3xl '>
-              <span className='text-main font-heading-Space-Grotesk'>
-                Hello
-              </span>
-              , My Name Is
+              <span className='text-main font-[Headline1]'>Hello</span>, My Name
+              Is
             </h2>
             <h1
               id='name-heading'
@@ -52,17 +52,13 @@ function Home() {
               Shradhanand Patil
             </h1>
             <p className='text-sm'>
-              MERN Stack Developer | Animation Enthusiast
+              <span className='text-main'>MERN</span> Stack Developer |
+              Animation Enthusiast
             </p>
             <p className='text-sm '>
               Building modern web experiences with MongoDB, React, Node.js,
               Express, and stunning GSAP-powered animations
             </p>
-            <div>
-              <button className='border border-gold tracking-wider px-8 hover:bg-gold transition-all duration-500 cursor-pointer py-2 rounded-xl font-heading-Montserrat font-semibold'>
-                Contact
-              </button>
-            </div>
           </div>
         </div>
 
@@ -76,6 +72,12 @@ function Home() {
       <div>
         <Skills />
       </div>
+      <div>
+        <Contact />
+      </div>
+      {/* <div>
+        <Footer />
+      </div> */}
     </>
   );
 }

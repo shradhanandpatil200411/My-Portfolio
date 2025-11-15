@@ -7,6 +7,7 @@ import { RxCross1 } from "react-icons/rx";
 
 function Navbar() {
   const navContainer = useRef();
+  const navName = useRef();
   const [nav, setNav] = useState(1);
   const [cross, setCross] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -46,6 +47,11 @@ function Navbar() {
           toggleActions: "restart none none play",
         },
         x: 1000,
+      });
+      gsap.from(navName.current, {
+        x: -100,
+        opacity: 0,
+        duration: 1,
       });
     },
     { revertOnUpdate: true }

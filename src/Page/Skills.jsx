@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import { mySkillData } from "../Data/data";
+import SkillsSection from "../Components/SkillsSection";
 import SkillsCard from "../Components/SkillsCard";
 
 function Skills() {
@@ -87,8 +88,16 @@ function Skills() {
 
   return (
     <>
-      <div ref={mySkillRef} className='w-screen  pr-5 pb-10'>
-        <h1 className='w-fit ml-[30%] mb-5 p-2 text-6xl font-bold font-heading-Montserrat bg-clip-text text-transparent bg-linear-to-r from-gradient-1 via-gradient-2 to-gradient-3'>
+      <div ref={mySkillRef} className='w-screen h-screen pr-5 pb-10'>
+        <h1
+          className='w-fit ml-[30%]  p-2 text-6xl font-bold font-heading-Montserrat bg-clip-text text-transparent'
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, #ff006e, #fb5607, #ffbe0b)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}>
           My Skills
         </h1>
         <div className='flex w-[120%] h-[60vh] relative'>
@@ -126,8 +135,8 @@ function Skills() {
               />
             </div>
           </div>
-          <div className='w-8/12 h-full flex  absolute left-[30%]'>
-            <div className='w-fit flex justify-center flex-col'>
+          <div className='w-7/12 h-full flex  absolute left-[28%]'>
+            <div className='w-7/12 flex justify-center flex-col'>
               <h1
                 ref={headingRef}
                 className='font-heading-Space-Grotesk text-8xl font-bold z-20 tracking-tighter'
@@ -139,69 +148,19 @@ function Skills() {
                 {mySkillData[index]?.name}
               </h1>
             </div>
-            <div
-              ref={paraRef}
-              className='text-white w-[30%] m-10 rounded-2xl p-5 backdrop-blur-3xl bg-white/20 '
-              style={{
-                boxShadow: `5px 10px 20px ${mySkillData[index].color2} `,
-              }}>
-              <div>
-                <div className='flex justify-evenly'>
-                  <div
-                    className={`cursor-pointer font-semibold`}
-                    style={
-                      isDetails
-                        ? { color: "white" }
-                        : { color: `${mySkillData[index].color3}` }
-                    }
-                    onClick={() => setIsDetails(false)}>
-                    Overview
-                  </div>
-                  <div
-                    className='cursor-pointer font-semibold'
-                    style={
-                      isDetails
-                        ? { color: `${mySkillData[index].color3}` }
-                        : { color: "white" }
-                    }
-                    onClick={() => setIsDetails(true)}>
-                    Details
-                  </div>
-                </div>
-                {isDetails ? (
-                  <div className='mt-5'>
-                    {mySkillData[index].relatedTech.map((data, index) => (
-                      <ul key={index}>
-                        <li className='text-sm my-1'>
-                          <span className='font-semibold'>{data.name}</span> :{" "}
-                          <span>{data.dis}</span>{" "}
-                        </li>
-                      </ul>
-                    ))}
-                  </div>
-                ) : (
-                  <div className='mt-2'>
-                    <div className='flex items-center gap-5'>
-                      <img
-                        className='w-20 h-20'
-                        src={mySkillData[index].iconImg}
-                        alt='icon-img'
-                      />
-                      <h1 className='text-xl'>
-                        V {mySkillData[index].version}
-                      </h1>
-                    </div>
-
-                    <p className='text-sm mt-2'>{mySkillData[index].dis}</p>
-                  </div>
-                )}
-              </div>
+            <div className='w-5/12'>
+              <SkillsCard
+                paraRef={paraRef}
+                index={index}
+                isDetails={isDetails}
+                setIsDetails={setIsDetails}
+              />
             </div>
           </div>
         </div>
         <div className=' flex justify-evenly gap-2 h-[30vh] '>
           {mySkillData.map((card) => (
-            <SkillsCard
+            <SkillsSection
               key={card.id}
               onAnimation={onAnimation}
               id={card.id}
