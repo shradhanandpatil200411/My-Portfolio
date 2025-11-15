@@ -12,8 +12,6 @@ import { useGSAP } from "@gsap/react";
 import LocomotiveScroll from "locomotive-scroll";
 import { lazy, useEffect, useRef, useState } from "react";
 import MainRoutes from "./Routes/MainRoutes";
-import Skills from "./Page/Skills";
-import About from "./Page/About";
 const Loader = lazy(() => import("./Components/Loader"));
 
 function App() {

@@ -6,7 +6,6 @@ import About from "./About";
 import { useRef } from "react";
 import Skills from "./Skills";
 import Contact from "./Contact";
-import Footer from "./Footer";
 
 function Home() {
   const container = useRef();
@@ -75,9 +74,6 @@ function Home() {
       <div>
         <Contact />
       </div>
-      {/* <div>
-        <Footer />
-      </div> */}
     </>
   );
 }
